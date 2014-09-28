@@ -155,7 +155,7 @@ function Microphone() {
 
         // Set up a processing node that will allow us to pass mic input off to
         // the DSP library for frequency domain analysis
-        procNode = context.createJavaScriptNode(BUFFER_LEN, 1, 1);
+        procNode = context.createScriptProcessor(BUFFER_LEN, 1, 1);
         procNode.onaudioprocess = function(e) {
             timeData = e.inputBuffer.getChannelData(0);
             if (recording) {
